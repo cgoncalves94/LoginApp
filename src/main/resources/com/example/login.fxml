@@ -24,21 +24,21 @@
                         <Font name="Gill Sans" size="19.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="login_username" layoutX="40.0" layoutY="196.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@style.css" unFocusColor="#1b8c9a" />
-                  <JFXPasswordField fx:id="login_password" layoutX="40.0" layoutY="256.0" prefHeight="40.0" prefWidth="330.0" promptText="Password" styleClass="textfield" stylesheets="@style.css" unFocusColor="#1b8c9a" />
-                  <JFXTextField fx:id="login_showPassword" layoutX="44.0" layoutY="256.0" prefHeight="40.0" prefWidth="330.0" styleClass="textfield" stylesheets="@style.css" unFocusColor="#1b8c9a" visible="false" />
+                  <JFXTextField fx:id="login_username" layoutX="40.0" layoutY="196.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@epos/style.css" unFocusColor="#1b8c9a" />
+                  <JFXPasswordField fx:id="login_password" layoutX="40.0" layoutY="256.0" prefHeight="40.0" prefWidth="330.0" promptText="Password" styleClass="textfield" stylesheets="@epos/style.css" unFocusColor="#1b8c9a" />
+                  <JFXTextField fx:id="login_showPassword" layoutX="44.0" layoutY="256.0" prefHeight="40.0" prefWidth="330.0" styleClass="textfield" stylesheets="@epos/style.css" unFocusColor="#1b8c9a" visible="false" />
                   <JFXCheckBox fx:id="login_selectShowPassword" checkedColor="#133bdc" layoutX="40.0" layoutY="317.0" text="Show Password" textFill="#1b8c9a" unCheckedColor="#1b8c9a" />
                   <Hyperlink fx:id="login_forgotPassword" layoutX="191.0" layoutY="315.0" text="Forgot Password?" />
-                  <JFXButton fx:id="login_button" layoutX="40.0" layoutY="352.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Login" />
+                  <JFXButton fx:id="login_button" layoutX="40.0" layoutY="352.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Login" />
                   <Label layoutX="142.0" layoutY="534.0" prefHeight="33.0" prefWidth="144.0" text="Register Account" textFill="#1b8c9a">
                      <font>
                         <Font name="Gill Sans" size="17.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="login_createAcc" layoutX="40.0" layoutY="576.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Create Account" />
+                  <JFXButton fx:id="login_createAcc" layoutX="40.0" layoutY="576.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Create Account" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="signup_form" layoutX="13.0" layoutY="14.0" prefHeight="659.0" prefWidth="410.0" styleClass="textfield" stylesheets="@style.css" visible="false">
+            <AnchorPane fx:id="signup_form" layoutX="13.0" layoutY="14.0" prefHeight="659.0" prefWidth="410.0" styleClass="textfield" stylesheets="@epos/style.css" visible="false">
                <children>
                   <SVGPath content="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" fill="#1b8c9a" layoutX="189.0" layoutY="96.0" scaleX="5.0" scaleY="5.0" />
                   <SVGPath content="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="#1b8c9a" layoutX="207.0" layoutY="86.0" scaleX="5.0" scaleY="5.0" />
@@ -47,26 +47,26 @@
                         <Font name="Gill Sans" size="19.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="signup_email" layoutX="40.0" layoutY="174.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@style.css" text="Email Addres" unFocusColor="#1b8c9a" />
-                  <JFXTextField fx:id="signup_username" layoutX="40.0" layoutY="228.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@style.css" text="Username" unFocusColor="#1b8c9a" />
-                  <JFXPasswordField fx:id="signup_password" layoutX="40.0" layoutY="281.0" prefHeight="40.0" prefWidth="330.0" promptText="Password" styleClass="textfield" stylesheets="@style.css" unFocusColor="#1b8c9a" />
-                  <JFXPasswordField fx:id="signup_cPassword" layoutX="40.0" layoutY="332.0" prefHeight="40.0" prefWidth="330.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@style.css" unFocusColor="#1b8c9a" />
+                  <JFXTextField fx:id="signup_email" layoutX="40.0" layoutY="174.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@epos/style.css" text="Email Addres" unFocusColor="#1b8c9a" />
+                  <JFXTextField fx:id="signup_username" layoutX="40.0" layoutY="228.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@epos/style.css" text="Username" unFocusColor="#1b8c9a" />
+                  <JFXPasswordField fx:id="signup_password" layoutX="40.0" layoutY="281.0" prefHeight="40.0" prefWidth="330.0" promptText="Password" styleClass="textfield" stylesheets="@epos/style.css" unFocusColor="#1b8c9a" />
+                  <JFXPasswordField fx:id="signup_cPassword" layoutX="40.0" layoutY="332.0" prefHeight="40.0" prefWidth="330.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@epos/style.css" unFocusColor="#1b8c9a" />
                   <JFXComboBox fx:id="signup_selectQuestion" layoutX="40.0" layoutY="384.0" prefHeight="33.0" prefWidth="330.0" promptText="Select Question" unFocusColor="#1b8c9a" />
-                  <JFXTextField fx:id="signup_answer" layoutX="40.0" layoutY="426.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@style.css" text="Answer" unFocusColor="#1b8c9a" />
-                  <JFXButton fx:id="signup_button" layoutX="40.0" layoutY="484.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Sign Up" />
+                  <JFXTextField fx:id="signup_answer" layoutX="40.0" layoutY="426.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@epos/style.css" text="Answer" unFocusColor="#1b8c9a" />
+                  <JFXButton fx:id="signup_button" layoutX="40.0" layoutY="484.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Sign Up" />
                   <Label layoutX="151.0" layoutY="552.0" prefHeight="33.0" prefWidth="144.0" text="Sign In Account" textFill="#1b8c9a">
                      <font>
                         <Font name="Gill Sans" size="17.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="signup_loginAcc" layoutX="40.0" layoutY="592.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Login Account">
+                  <JFXButton fx:id="signup_loginAcc" layoutX="40.0" layoutY="592.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Login Account">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXButton>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="forgot_forrm" layoutX="13.0" layoutY="14.0" prefHeight="659.0" prefWidth="410.0" styleClass="textfield" stylesheets="@style.css" visible="false">
+            <AnchorPane fx:id="forgot_forrm" layoutX="13.0" layoutY="14.0" prefHeight="659.0" prefWidth="410.0" styleClass="textfield" stylesheets="@epos/style.css" visible="false">
                <children>
                   <SVGPath content="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="#1b8c9a" fillRule="EVEN_ODD" layoutX="198.0" layoutY="81.0" scaleX="5.0" scaleY="4.5" />
                   <Label layoutX="145.0" layoutY="132.0" prefHeight="33.0" prefWidth="135.0" text="Forgot Password" textFill="#1b8c9a">
@@ -74,18 +74,18 @@
                         <Font name="Gill Sans" size="19.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="forgot_username" layoutX="40.0" layoutY="184.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@style.css" text="Username" unFocusColor="#1b8c9a" />
+                  <JFXTextField fx:id="forgot_username" layoutX="40.0" layoutY="184.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@epos/style.css" text="Username" unFocusColor="#1b8c9a" />
                   <JFXComboBox fx:id="forgot_selectQuestion" layoutX="40.0" layoutY="244.0" prefHeight="33.0" prefWidth="330.0" promptText="Select Question" unFocusColor="#1b8c9a" />
-                  <JFXTextField fx:id="forgot_answer" layoutX="41.0" layoutY="298.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@style.css" text="Answer" unFocusColor="#1b8c9a" />
-                  <JFXButton fx:id="forgot_proceedBtn" layoutX="41.0" layoutY="369.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Proceed" />
-                  <JFXButton fx:id="forgot_backBtn" layoutX="40.0" layoutY="590.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Back">
+                  <JFXTextField fx:id="forgot_answer" layoutX="41.0" layoutY="298.0" prefHeight="40.0" prefWidth="330.0" promptText="Username" styleClass="textfield" stylesheets="@epos/style.css" text="Answer" unFocusColor="#1b8c9a" />
+                  <JFXButton fx:id="forgot_proceedBtn" layoutX="41.0" layoutY="369.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Proceed" />
+                  <JFXButton fx:id="forgot_backBtn" layoutX="40.0" layoutY="590.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Back">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </JFXButton>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="changePass_form" layoutX="13.0" layoutY="14.0" prefHeight="659.0" prefWidth="410.0" styleClass="textfield" stylesheets="@style.css" visible="false">
+            <AnchorPane fx:id="changePass_form" layoutX="13.0" layoutY="14.0" prefHeight="659.0" prefWidth="410.0" styleClass="textfield" stylesheets="@epos/style.css" visible="false">
                <children>
                   <SVGPath content="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="#1b8c9a" fillRule="EVEN_ODD" layoutX="198.0" layoutY="81.0" scaleX="5.0" scaleY="4.5" />
                   <Label layoutX="140.0" layoutY="132.0" prefHeight="33.0" prefWidth="144.0" text="Change Password" textFill="#1b8c9a">
@@ -93,10 +93,10 @@
                         <Font name="Gill Sans" size="19.0" />
                      </font>
                   </Label>
-                  <JFXPasswordField fx:id="changePass_password" layoutX="41.0" layoutY="226.0" prefHeight="40.0" prefWidth="330.0" promptText="Password" styleClass="textfield" stylesheets="@style.css" unFocusColor="#1b8c9a" />
-                  <JFXPasswordField fx:id="changePass_cPassword" layoutX="40.0" layoutY="286.0" prefHeight="40.0" prefWidth="330.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@style.css" unFocusColor="#1b8c9a" />
-                  <JFXButton fx:id="changePass_proceedBtn" layoutX="40.0" layoutY="350.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Proceed" />
-                  <JFXButton fx:id="changePass_backBtn" layoutX="40.0" layoutY="590.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@style.css" text="Back">
+                  <JFXPasswordField fx:id="changePass_password" layoutX="41.0" layoutY="226.0" prefHeight="40.0" prefWidth="330.0" promptText="Password" styleClass="textfield" stylesheets="@epos/style.css" unFocusColor="#1b8c9a" />
+                  <JFXPasswordField fx:id="changePass_cPassword" layoutX="40.0" layoutY="286.0" prefHeight="40.0" prefWidth="330.0" promptText="Confirm Password" styleClass="textfield" stylesheets="@epos/style.css" unFocusColor="#1b8c9a" />
+                  <JFXButton fx:id="changePass_proceedBtn" layoutX="40.0" layoutY="350.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Proceed" />
+                  <JFXButton fx:id="changePass_backBtn" layoutX="40.0" layoutY="590.0" prefHeight="40.0" prefWidth="330.0" styleClass="btn" stylesheets="@epos/style.css" text="Back">
                      <font>
                         <Font size="15.0" />
                      </font>
