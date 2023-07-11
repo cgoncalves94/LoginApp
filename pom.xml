@@ -121,7 +121,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.example.epos/com.example.epos.loginApplication</mainClass>
+                    <mainClass>com.example.epos/com.example.epos.loginApp</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -142,7 +142,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.epos/com.example.epos.loginApplication</mainClass>
+                            <mainClass>com.example.epos/com.example.epos.loginApp</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
