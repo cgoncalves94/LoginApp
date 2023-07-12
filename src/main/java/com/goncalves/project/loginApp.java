@@ -1,5 +1,6 @@
 package com.goncalves.project;
 
+import com.goncalves.project.dao.DatabaseConnection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,6 +17,13 @@ public class loginApp extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+    @Override
+    public void stop() throws Exception {
+        DatabaseConnection.close();
+        super.stop();
+    }
+
     public static void main(String[] args) {launch();
     }
 }

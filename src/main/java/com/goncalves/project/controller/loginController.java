@@ -7,12 +7,11 @@ import java.sql.*;
 import java.util.*;
 
 
-
+import com.goncalves.project.util.FormUtils;
+import com.goncalves.project.util.FormValidation;
 import com.goncalves.project.util.alertMessage;
 import com.goncalves.project.model.User;
 import com.goncalves.project.service.UserService;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,7 +96,7 @@ public class loginController implements Initializable {
 
         String password = login_selectShowPassword.isSelected() ? login_showPassword.getText() : login_password.getText();
 
-        if (login_username.getText().isEmpty() || password.isEmpty()) {
+        if (FormValidation.isEmpty(login_username.getText()) || FormValidation.isEmpty(password)) {
             alert.errorMessage("Please fill all blank fields");
         } else {
             User loggedUser = userService.loginUser(login_username.getText(), password);
@@ -105,14 +104,9 @@ public class loginController implements Initializable {
             if (loggedUser !=null) {
                 alert.successMessage("Successfully Login!");
 
-                // Login successful
-
-
                 // Load home form
                 Parent mainForm = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/views/homeForm.fxml")));
                 Scene mainFormScene = new Scene(mainForm);
-
-
 
                 // Get the Stage from the current scene
                 Stage window = (Stage) login_btn.getScene().getWindow();
@@ -123,7 +117,6 @@ public class loginController implements Initializable {
                 // Display the stage
                 window.show();
 
-
             } else {
                 // ELSE, THEN ERROR MESSAGE WILL APPEAR
                 alert.errorMessage("Incorrect Username/Password");
@@ -132,7 +125,6 @@ public class loginController implements Initializable {
     }
 
     public void showPassword() {
-
         if (login_selectShowPassword.isSelected()) {
             login_showPassword.setText(login_password.getText());
             login_showPassword.setVisible(true);
@@ -144,39 +136,6 @@ public class loginController implements Initializable {
         }
     }
 
-    public void forgotPassword()   {
-        alertMessage alert = new alertMessage();
-
-        if (forgot_username.getText().isEmpty()
-                || forgot_selectQuestion.getSelectionModel().getSelectedItem() == null
-                || forgot_answer.getText().isEmpty()) {
-            alert.errorMessage("Please fill all blank fields");
-        } else {
-            User forgotPasswordSuccess = userService.forgotPassword(forgot_username.getText(),
-                    forgot_selectQuestion.getSelectionModel().getSelectedItem(),
-                    forgot_answer.getText());
-
-            if (forgotPasswordSuccess != null) {
-                    // PROCEED TO CHANGE PASSWORD
-                    signup_form.setVisible(false);
-                    login_form.setVisible(false);
-                    forgot_form.setVisible(false);
-                    changePass_form.setVisible(true);
-            } else {
-                alert.errorMessage("Incorrect information");
-            }
-        }
-    }
-
-    public void forgotListQuestion(){
-
-        List<String> listQ = new ArrayList<>(Arrays.asList(questionList));
-
-        ObservableList<String> listData = FXCollections.observableArrayList(listQ);
-        forgot_selectQuestion.setItems(listData);
-
-    }
-
     public void register() throws SQLException {
         alertMessage alert = new alertMessage();
         String username = signup_username.getText();
@@ -185,14 +144,16 @@ public class loginController implements Initializable {
         String question = signup_selectQuestion.getSelectionModel().getSelectedItem();
         String answer = signup_answer.getText();
 
-        if (signup_email.getText().isEmpty() || signup_username.getText().isEmpty()
-                || signup_password.getText().isEmpty() || signup_cPassword.getText().isEmpty()
-                || signup_selectQuestion.getSelectionModel().getSelectedItem() == null
-                || signup_answer.getText().isEmpty()) {
+        if (FormValidation.isEmpty(email)
+                || FormValidation.isEmpty(username)
+                || FormValidation.isEmpty(password)
+                || FormValidation.isEmpty(signup_cPassword.getText())
+                || FormValidation.isComboBoxSelected(signup_selectQuestion)
+                || FormValidation.isEmpty(answer)) {
             alert.errorMessage("All fields are necessary to be filled");
-        } else if (!Objects.equals(signup_password.getText(), signup_cPassword.getText())) {
+        } else if (FormValidation.isPasswordMatch(password, signup_cPassword.getText())) {
             alert.errorMessage("Password does not match");
-        } else if (signup_password.getText().length() < 8) {
+        } else if (FormValidation.isPasswordLengthValid(password)) {
             alert.errorMessage("Invalid Password, at least 8 characters needed");
         } else {
             User newUser = new User(email, username, password, question, answer);
@@ -201,59 +162,82 @@ public class loginController implements Initializable {
             if (registerSuccess) {
                 alert.successMessage("Registered Successfully!");
 
-                registerClearFields();
+                // TO CLEAR ALL FIELDS OF REGISTRATION FORM
+                FormUtils.clearTextField(signup_email);
+                FormUtils.clearTextField(signup_username);
+                FormUtils.clearPasswordField(signup_password);
+                FormUtils.clearPasswordField(signup_cPassword);
+                FormUtils.clearComboBox(signup_selectQuestion);
+                FormUtils.clearTextField(signup_answer);
 
-                signup_form.setVisible(false);
-                login_form.setVisible(true);
+                FormUtils.hide(signup_form);
+                FormUtils.show(login_form);
             }
         }
     }
 
-    // TO CLEAR ALL FIELDS OF REGISTRATION FORM
-    public void registerClearFields() {
-        signup_email.setText("");
-        signup_username.setText("");
-        signup_password.setText("");
-        signup_cPassword.setText("");
-        signup_selectQuestion.getSelectionModel().clearSelection();
-        signup_answer.setText("");
-    }
 
-    public void changePassword()  {
+    public void forgotPassword() {
         alertMessage alert = new alertMessage();
 
-        if(changePass_password.getText().isEmpty() || changePass_cPassword.getText().isEmpty()){
+        if (FormValidation.isEmpty(forgot_username.getText())
+                || FormValidation.isComboBoxSelected(forgot_selectQuestion)
+                || FormValidation.isEmpty(forgot_answer.getText())) {
             alert.errorMessage("Please fill all blank fields");
-        }else if(!changePass_password.getText().equals(changePass_cPassword.getText())){
+        } else {
+            User forgotPasswordSuccess = userService.forgotPassword(forgot_username.getText(),
+                    forgot_selectQuestion.getSelectionModel().getSelectedItem(),
+                    forgot_answer.getText());
+
+            if (forgotPasswordSuccess != null) {
+                // PROCEED TO CHANGE PASSWORD
+                FormUtils.hide(signup_form);
+                FormUtils.hide(login_form);
+                FormUtils.hide(forgot_form);
+                FormUtils.show(changePass_form);
+            } else {
+                alert.errorMessage("Incorrect information");
+            }
+        }
+    }
+
+
+    public void changePassword() {
+        alertMessage alert = new alertMessage();
+
+        if (FormValidation.isEmpty(changePass_password.getText()) || FormValidation.isEmpty(changePass_cPassword.getText())) {
+            alert.errorMessage("Please fill all blank fields");
+        } else if (FormValidation.isPasswordMatch(changePass_password.getText(), changePass_cPassword.getText())) {
             alert.errorMessage("Password does not match");
-        }else if(changePass_password.getText().length() < 8){
+        } else if (FormValidation.isPasswordLengthValid(changePass_password.getText())) {
             alert.errorMessage("Invalid Password, at least 8 characters needed");
-        }else {
+        } else {
             boolean changePasswordSuccess = userService.changePassword(forgot_username.getText(), changePass_password.getText());
 
             if (changePasswordSuccess) {
                 alert.successMessage("Successfully changed Password");
 
                 // LOGIN FORM WILL APPEAR
-                signup_form.setVisible(false);
-                login_form.setVisible(true);
-                forgot_form.setVisible(false);
-                changePass_form.setVisible(false);
+                FormUtils.hide(signup_form);
+                FormUtils.show(login_form);
+                FormUtils.hide(forgot_form);
+                FormUtils.hide(changePass_form);
 
-                login_username.setText("");
+                FormUtils.clearTextField(login_username);
+                FormUtils.clearPasswordField(login_password);
+                FormUtils.clearTextField(login_showPassword);
+
                 login_password.setVisible(true);
-                login_password.setText("");
                 login_showPassword.setVisible(false);
                 login_selectShowPassword.setSelected(false);
 
-                changePass_password.setText("");
-                changePass_cPassword.setText("");
+                FormUtils.clearPasswordField(changePass_password);
+                FormUtils.clearPasswordField(changePass_cPassword);
             }
         }
     }
 
     public void switchForm(ActionEvent event) {
-
         // THE REGISTRATION FORM WILL BE VISIBLE
         if (event.getSource() == signup_loginAccount || event.getSource() == forgot_backBtn) {
             signup_form.setVisible(false);
@@ -285,13 +269,12 @@ public class loginController implements Initializable {
             "What is the name of your pet?", "What is your most favorite sport?"};
 
     public void questions() {
-
-        List<String> listQ = new ArrayList<>(Arrays.asList(questionList));
-
-        ObservableList<String> listData = FXCollections.observableArrayList(listQ);
-        signup_selectQuestion.setItems(listData);
+        FormUtils.fillComboBox(signup_selectQuestion, questionList);
     }
 
+    public void forgotListQuestion() {
+        FormUtils.fillComboBox(forgot_selectQuestion, questionList);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

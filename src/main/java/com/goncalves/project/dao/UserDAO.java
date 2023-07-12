@@ -11,14 +11,7 @@ public class UserDAO {
 
     public UserDAO() {
         // Get connection from DatabaseConnection
-        connect = DatabaseConnection.getConnection();
-    }
-
-    public void close() throws SQLException {
-        if (connect != null) {
-            connect.close();
-            System.out.println("Database connection closed.");
-        }
+        connect = DatabaseConnection.connect();
     }
 
     // This method checks if a user with the provided username and password exists in the database

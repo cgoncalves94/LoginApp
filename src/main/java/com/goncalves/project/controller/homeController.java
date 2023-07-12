@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -59,7 +58,7 @@ public class homeController implements Initializable {
 
 
     // Other methods and event handlers for the main form can be defined here
-    public void logout() throws IOException, SQLException {
+    public void logout() throws IOException {
 
         userService.logout();
         // navigateToLoginForm();

@@ -5,24 +5,31 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static Connection connection = null;
+    private static Connection connection;
 
-    // Private constructor
-    private DatabaseConnection() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/epos", "root", "admin");
-            System.out.println("Successfully connected to the database.");
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Static method to get connection
-    public static Connection getConnection() {
+    public static Connection connect() {
         if (connection == null) {
-            new DatabaseConnection();
+            try {
+                // Connect to your database
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/epos", "root", "admin");
+                System.out.println("Successfully connected to the database.");
+            } catch (SQLException e) {
+                System.out.println("An error occurred while connecting to the database.");
+                e.printStackTrace();
+            }
         }
         return connection;
+    }
+
+    public static void close() {
+        if (connection != null) {
+            try {
+                connection.close();
+                System.out.println("Database connection closed.");
+            } catch (SQLException e) {
+                System.out.println("An error occurred while closing the database connection.");
+                e.printStackTrace();
+            }
+        }
     }
 }
