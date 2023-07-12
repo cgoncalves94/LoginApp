@@ -1,4 +1,4 @@
-package com.example.epos.model;
+package com.goncalves.project.model;
 
 public class User {
     private String email, username, password, question, answer;

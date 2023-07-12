@@ -1,5 +1,5 @@
 
-package com.example.epos.controller;
+package com.goncalves.project.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -8,9 +8,9 @@ import java.util.*;
 
 
 
-import com.example.epos.util.alertMessage;
-import com.example.epos.model.User;
-import com.example.epos.service.UserService;
+import com.goncalves.project.util.alertMessage;
+import com.goncalves.project.model.User;
+import com.goncalves.project.service.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

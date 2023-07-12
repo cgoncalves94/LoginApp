@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="432.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.epos.controller.homeController">
+<AnchorPane id="AnchorPane" prefHeight="432.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.goncalves.project.controller.homeController">
     <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="34.0" layoutY="65.0" prefHeight="50.0" prefWidth="298.0" text="Welcome, " AnchorPane.bottomAnchor="322.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="331.0" AnchorPane.topAnchor="65.0">
         <font>
             <Font size="40.0" />

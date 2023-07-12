@@ -1,6 +1,6 @@
-package com.example.epos.dao;
+package com.goncalves.project.dao;
 
-import com.example.epos.model.User;
+import com.goncalves.project.model.User;
 
 import java.sql.*;
 import java.time.LocalDate;

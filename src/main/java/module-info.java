@@ -10,16 +10,16 @@ module com.example.epos {
     requires mysql.connector.j;
 
 
-    opens com.example.epos to javafx.fxml;
-    exports com.example.epos;
-    exports com.example.epos.controller;
-    opens com.example.epos.controller to javafx.fxml;
-    exports com.example.epos.model;
-    opens com.example.epos.model to javafx.fxml;
-    exports com.example.epos.dao;
-    opens com.example.epos.dao to javafx.fxml;
-    exports com.example.epos.service;
-    opens com.example.epos.service to javafx.fxml;
-    exports com.example.epos.util;
-    opens com.example.epos.util to javafx.fxml;
+    opens com.goncalves.project to javafx.fxml;
+    exports com.goncalves.project;
+    exports com.goncalves.project.controller;
+    opens com.goncalves.project.controller to javafx.fxml;
+    exports com.goncalves.project.model;
+    opens com.goncalves.project.model to javafx.fxml;
+    exports com.goncalves.project.dao;
+    opens com.goncalves.project.dao to javafx.fxml;
+    exports com.goncalves.project.service;
+    opens com.goncalves.project.service to javafx.fxml;
+    exports com.goncalves.project.util;
+    opens com.goncalves.project.util to javafx.fxml;
 }

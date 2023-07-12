@@ -1,4 +1,4 @@
-package com.example.epos.dao;
+package com.goncalves.project.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

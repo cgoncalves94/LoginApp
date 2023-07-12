@@ -14,7 +14,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0"
            prefWidth="335.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="com.example.epos.controller.loginController">
+           fx:controller="com.goncalves.project.controller.loginController">
     <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="white-bg" stylesheets="@../../../css/style.css">
         <AnchorPane fx:id="login_form" layoutX="12.0" layoutY="15.0" prefHeight="520.0" prefWidth="312.0">
             <Label layoutX="93.0" layoutY="86.0" text="Sign In Account" textFill="#187778">

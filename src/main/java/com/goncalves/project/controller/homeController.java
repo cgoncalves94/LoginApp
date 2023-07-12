@@ -1,8 +1,8 @@
-package com.example.epos.controller;
+package com.goncalves.project.controller;
 
 
-import com.example.epos.model.User;
-import com.example.epos.service.UserService;
+import com.goncalves.project.model.User;
+import com.goncalves.project.service.UserService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

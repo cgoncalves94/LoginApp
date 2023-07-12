@@ -1,7 +1,7 @@
-package com.example.epos.service;
+package com.goncalves.project.service;
 
-import com.example.epos.dao.UserDAO;
-import com.example.epos.model.User;
+import com.goncalves.project.dao.UserDAO;
+import com.goncalves.project.model.User;
 
 import java.sql.SQLException;
 
